@@ -1,0 +1,169 @@
+/* -----------------------------------
+Template:  clothing- Responsive Multi-purpose HTML5 Template
+Template URI: http://bootexperts.com
+Description: This is html5 template
+Author: BootExperts
+Author URI: http://bootexperts.com
+Version: 1.0
+
+--------------------------------------*/
+.active-slider{position: relative;}
+.slider-content {
+  left: 53%;
+  top: 50%;
+  transform: translateY(-50%);
+  color:#f1f1f1
+}
+.slider-content h4 {
+  color: #fff;
+  font-family: lato;
+  font-size: 20px;
+}
+.slider-content h1 {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 50px;
+  margin-bottom: 55px;
+}
+.underline::before,.underline::after {
+  background: #fff none repeat scroll 0 0;
+  bottom: -25px;
+  content: "";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  width: 60px;
+}
+.underline::after {
+  background: #cc3333 none repeat scroll 0 0;
+  left: 20px;
+  width: 20px;
+}
+.slick-dots2 {
+  border: 1px solid red;
+  bottom: auto;
+  left: 100px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: auto;
+}
+.slick-dots {
+  left: 50%;
+  bottom: 20px;
+  transform: translateY(-50%);
+  width: auto;
+}
+.slick-dotted.slick-slider {
+  margin-bottom: 0;
+}
+.carosule-pagi .slick-dots li {
+  background: #fff none repeat scroll 0 0;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  display: block;
+  height: 16px;
+  margin: 10px 3px;
+  opacity: 0.5;
+  position: relative;
+  width: 16px;
+  float: left;
+}
+.carosule-pagi .slick-dots li button {
+  background: #fff none repeat scroll 0 0;
+  border: medium none;
+  bottom: 0;
+  display: block;
+  height: 8px;
+  left: 0;
+  margin: auto;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 8px;
+}
+.slick-dots li button::before {
+ text-indent: -1e+7px;
+}
+.carosule-pagi .slick-dots li.slick-active {
+  opacity: 1;
+  position:relative
+}
+.carosule-pagi.cp-line .slick-dots li.slick-active::after {
+    background: #fff none repeat scroll 0 0;
+    content: "";
+    height: 2px;
+    left: 25px;
+    position: absolute;
+    top: 5px;
+    width: 40px;
+    display: none;
+}
+.fa.fa-angle-left.slick-arrow{
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 15%;
+    cursor: pointer;
+}
+.fa-angle-left:before{
+    font-size: 105px;
+    color: rgba(255,255,255,.2);
+    position: relative;
+    top: 43%;
+    left: 38%;
+}
+.fa.fa-angle-right.slick-arrow{
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    height: 100%;
+    width: 15%;
+    cursor: pointer;
+}
+.fa-angle-right:before{
+    font-size: 105px;
+    color: rgba(255,255,255,.4);
+    position: relative;
+    top: 43%;
+    right: -38%;
+}
+@media (max-width: 991px){
+    .fa-angle-left:before,
+    .fa-angle-right:before{
+        top: 34%;
+    }
+}
+@media (max-width: 767px){
+    .slick-dots{display:none!important;}
+    .fa-angle-left:before,
+    .fa-angle-right:before{
+        top: 24%;
+    }
+    .slider-area .slider-content [class*="btn-"]{
+        padding: 0 12px;
+        font-size: 10px;
+        line-height: 29px;
+        margin: 0;
+        height: 30px;
+    }
+}
+@media (max-width: 568px){
+    .slick-dots{display:none!important;}
+    .fa-angle-left,
+    .fa-angle-right{display:none!important;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

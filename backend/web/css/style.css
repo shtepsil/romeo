@@ -1,0 +1,1034 @@
+/*
+
+36    ~   Форма авторизации
+270   ~   Форма поиска
+294   ~   Товарный чек
+368   ~   Кассовый отчет
+398   ~   Страница импорта штрихкодов/сертификатов в Excel
+524   ~   Страница "номенклатура товара"  
+586   ~   Страница "Справочники"
+602   ~   Страница "Поступление товара"
+639   ~   Страница "Работники"
+663   ~   Страница "Оприходование товара"
+692   ~   Страница "Оприходование товара"
+737   ~   Страница "Выгрузка этикеток"
+800   ~   Страница "Поиск чека"
+859   ~   Страница "Отправка Email"
+871   ~   Страница "Товарный учет"
+972   ~   Страница "Заказы"
+
+
+
+
+
+
+
+
+
+
+*/
+
+.main-body{
+    background: #373737 url("../images/main-bg.jpg") repeat;
+    background-size: 2000px;
+    background-position: center -300px;
+    background-attachment: fixed;
+}
+button{ position: relative; }
+button img,img.loading{ position: absolute; display: none; }
+
+/* Количество заказов в главной шапке сайта */
+.count-orders-online{
+    color: #b5b5b5;
+    position: fixed;
+    top: 15px;
+    left: 200px;
+    z-index: 1040;
+}
+
+/* ==================================================== *
+*                  Форма авторизации
+* ===================================================== */
+.auth-body, .login-submit, .login-submit:before, .login-submit:after {
+    background: #373737 url("../images/bg.png") 0 0 repeat;
+}
+
+.auth-body {
+    font: 14px/20px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #404040;
+}
+.auth-footer{
+    background-color: #373737;
+    border-top: 1px solid rgba(255,255,255,.1);
+    color: #bbb;
+}
+.auth-admin .login a {
+    color: #00a1d2;
+    text-decoration: none;
+    outline: none;
+}
+.auth-admin .login a:hover {
+    text-decoration: underline;
+}
+.auth-admin .login a:active,
+.auth-admin .login a:visited,
+.auth-admin .login button:active,
+.auth-admin .ogin button:visited{
+    outline: none;
+    border: none;
+}
+
+.auth-admin .login {
+    position: relative;
+    margin: 200px auto;
+    width: 440px;
+    padding-right: 32px;
+    font-weight: 300;
+    color: #a8a7a8;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8);
+}
+.auth-admin .login p {
+    margin: 0 0 10px;
+}
+.auth-admin .login .field-loginform-username p {
+    position: absolute;
+    top: -2px;
+    left: 105px;
+    font-size: 10px;
+}
+.auth-admin .login .field-loginform-password p {
+    position: absolute;
+    bottom: 12px;
+    left: 105px;
+    font-size: 10px;
+}
+
+@-webkit-keyframes autofill {
+    to {
+        color: #bbb;
+        background: rgba(0, 0, 0, 0.16);
+    }
+}
+
+.auth-admin input:-webkit-autofill {
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
+}
+
+.auth-admin .login input,
+.auth-admin .login button,
+.auth-admin .login label {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.auth-admin .login input[type=text],
+.auth-admin .login input[type=password] {
+    padding: 0 10px;
+    width: 300px;
+    height: 40px;
+    color: #bbb;
+    text-shadow: 1px 1px 1px black;
+    background: rgba(0, 0, 0, 0.16);
+    border: 0;
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.06);
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.06);
+}
+.auth-admin .login input[type=text]:focus,
+.auth-admin .login input[type=password]:focus {
+    color: white;
+    background: rgba(0, 0, 0, 0.1);
+    outline: 0;
+}
+
+.auth-admin .login label {
+    float: left;
+    width: 100px;
+    line-height: 40px;
+    padding-right: 10px;
+    font-weight: 100;
+    text-align: right;
+    letter-spacing: 1px;
+}
+
+.auth-admin .login .forgot-password {
+    padding-left: 100px;
+    font-size: 13px;
+    font-weight: 100;
+    letter-spacing: 1px;
+    position: relative;
+    top: -5px;
+}
+
+.auth-admin .login .login-submit {
+    /*border: 1px solid red;*/
+    position: absolute;
+    top: 15px;
+    right: 11px;
+    width: 60px;
+    height: 60px;
+    padding: 8px;
+    border-radius: 32px;
+    -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.35);
+}
+.auth-admin .login .login-submit:before,
+.auth-admin .login .login-submit:after {
+    content: '';
+    z-index: 1;
+    position: absolute;
+}
+.auth-admin .login .login-submit:before {
+    top: 25px;
+    left: -4px;
+    width: 4px;
+    height: 10px;
+    -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.06);
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.06);
+}
+.auth-admin .login .login-submit:after {
+    top: -4px;
+    bottom: -4px;
+    right: -7px;
+    width: 36px;
+}
+
+.auth-admin .login .login-button:focus{ outline: none; }
+.auth-admin .login .login-button {
+    position: relative;
+    top: -2px;
+    right: 2px;
+    z-index: 2;
+    width: 48px;
+    height: 48px;
+    padding: 0 0 48px;
+    /* Fix wrong positioning in Firefox 9 & older (bug 450418) */
+    text-indent: 120%;
+    white-space: nowrap;
+    overflow: hidden;
+    background: none;
+    border: 0;
+    border-radius: 24px;
+    cursor: pointer;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2), 0 1px rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2), 0 1px rgba(255, 255, 255, 0.1);
+    /* Must use another pseudo element for the gradient background because Webkit */
+    /* clips the background incorrectly inside elements with a border-radius.     */
+}
+.auth-admin .login .login-button:before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    background: #00a2d3;
+    border-radius: 24px;
+    background-image: -webkit-linear-gradient(top, #00a2d3, #0d7796);
+    background-image: -moz-linear-gradient(top, #00a2d3, #0d7796);
+    background-image: -o-linear-gradient(top, #00a2d3, #0d7796);
+    background-image: linear-gradient(to bottom, #00a2d3, #0d7796);
+    -webkit-box-shadow: inset 0 0 0 1px #00a2d3, 0 0 0 5px rgba(0, 0, 0, 0.16);
+    box-shadow: inset 0 0 0 1px #00a2d3, 0 0 0 5px rgba(0, 0, 0, 0.16);
+}
+.auth-admin .login .login-button:active:before {
+    background: #0591ba;
+    background-image: -webkit-linear-gradient(top, #0591ba, #00a2d3);
+    background-image: -moz-linear-gradient(top, #0591ba, #00a2d3);
+    background-image: -o-linear-gradient(top, #0591ba, #00a2d3);
+    background-image: linear-gradient(to bottom, #0591ba, #00a2d3);
+}
+.auth-admin .login .login-button:after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 12px;
+    width: 25px;
+    height: 19px;
+    background: url("../images/arrow.png") 0 0 no-repeat;
+}
+
+::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+.auth-admin .login .lt-ie9 input[type=text],
+.auth-admin .login .lt-ie9 input[type=password] {
+    line-height: 40px;
+    background: #282828;
+}
+.auth-admin .login .lt-ie9 .login-submit {
+    position: absolute;
+    top: 12px;
+    right: -28px;
+    padding: 4px;
+}
+.auth-admin .login .lt-ie9 .login-submit:before,
+.auth-admin .login .lt-ie9 .login-submit:after {
+    display: none;
+}
+.auth-admin .login .lt-ie9 .login-button {
+    line-height: 48px;
+}
+.auth-admin .login .lt-ie9 .about {
+    background: #313131;
+}
+
+/* ==================================================== *
+*                       Форма поиска
+* ===================================================== */
+.srch .form-search .left-block{
+    float: left;
+    width: 45%;
+}
+.srch .form-search .right-block{
+    width: 50%;
+    margin-left: 50%;
+}
+.srch .form-search .right-block input,
+.srch .form-search .right-block select{
+    margin-top: 10px;
+}
+/* анимация загрузки */
+.srch .w-vc{ position: relative; }
+.srch .w-vc img{
+    display: none;
+    position: absolute;
+    top: 7px;
+    left: -25px;
+}
+
+/* ==================================================== *
+*                      Товарный чек
+* ===================================================== */
+.row1 .form-control{
+    float: left;
+}
+.sales-reciept div[class*='col-md-']{
+    padding: 0 3px;
+}
+.sales-reciept .top-info{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.sales-reciept .w-discount-card-info{
+    font-size: 14px;
+    padding-right: 55px!important;
+}
+.sales-reciept .rd{
+    font-size: 14px;
+}
+
+.sales-reciept .rd .sko .span2,
+.sales-reciept .rd .sko .b2,
+.sales-reciept [class*='empty'],
+.sales-reciept .s1,
+.sales-reciept .s2,
+.sales-reciept .s3,
+.sales-reciept .s4{ display: none; }
+
+.sales-reciept .table [class*='tfoot']{ background: #ffc; }
+.sales-reciept .table .indent th{ border: none; }
+.sales-reciept .table .t-header th{ border: none; }
+
+.sales-reciept .table tfoot tr td:nth-child(1){ text-align: left; }
+/* Таблица - строки раздела 1 */
+.sales-reciept .table[class*='document'] [class*='table-input']{
+    /*min-width: 110px;*/
+}
+.sales-reciept .table [class*='td-bar']{
+    /*border: 1px solid red;*/
+}
+.sales-reciept .row4{
+    margin-top: 10px;
+}
+.sales-reciept .table tr{
+    border: 1px solid rgba(255,255,255, 0);
+}
+.sales-reciept .table tr .w-checkbox{
+    /*display: none;*/
+    padding: 4px 0 0;
+}
+.sales-reciept .w-barcode{ position: relative; }
+.sales-reciept .w-barcode img{
+    display: none;
+    position: absolute;
+    left: -22px;
+    top: 3px;
+}
+.sales-reciept input[name=manual_discount]{
+    width: 52px;
+}
+/* кнопка "сохранить" */
+.sales-reciept .save{ position: relative; }
+.sales-reciept .save img{
+    display: none;
+    position: absolute;
+    right: -26px;
+    top: 0;
+}
+.sales-reciept .glyphicon-remove{
+    position: relative;
+    top: 6px;
+    left: 4px;
+}
+.sales-reciept .table tr td .employees{
+    width: 112px;
+    font-size: 12px;
+}
+.sales-reciept .table tr td.description{
+    width: 200px;
+}
+
+
+/* ==================================================== *
+*                     Кассовый отчет
+* ===================================================== */
+.cr .table td{
+    font-size: 13px;
+}
+.cr .table1 td{
+    border: none;
+}
+.cr .get-report{position: relative;}
+.cr .get-report img{
+    display: none;
+    position: absolute;
+    top: 0px;
+    right: -30px;
+}
+.cr .shift button{
+    position: relative;
+}
+.cr .shift button.open-shift{
+    margin-left: -5px;
+}
+.cr .shift button img{
+    display: none;
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    margin-left: -10px;
+}
+
+/* ============================================================= *
+*         Страница импорта штрихкодов/сертификатов в Excel
+* ============================================================== */
+.res{
+    position: relative;
+    z-index: 1;
+    height: auto;
+}
+.ddfs .header{ position: relative; }
+.ddfs .header button{
+    position: absolute;
+    top: 0px;
+    left: -25px;
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+    padding: 0px 0 0 1px;
+    border-radius: 100px;
+}
+.ddfs form{ height: 75px; }
+.ddfs .w-list-files{
+    position: relative;
+    display: none;
+    height: 240px;
+    overflow: auto;
+}
+.ddfs .w-list-files:before{
+    content: '';
+    position: fixed;
+    bottom: 62px;
+    display: none;
+    width: 88%;
+    max-width: inherit;
+    height: 248px;
+    overflow: hidden;
+    background: rgba(255,255,255,.6);
+    z-index: 1;
+}
+.ddfs .w-list-files.over-dis:before{
+    display: block;
+    opacity:.7;
+}
+.ddfs .view-list-files a{ display: inline-block; }
+.ddfs .view-list-files a span.badge{
+    position: relative;
+    right: -4px;
+    background-color: rgba(2,117,216,1);
+}
+.ddfs .view-list-files a:focus{
+    text-decoration: none;
+    color: #0275d8;
+}
+.ddfs .view-list-files a:hover{
+    text-decoration: underline;
+    color: #0275d8;
+}
+.ddfs .list-files .td-del .w-del{ position: relative; }
+.ddfs .list-files .td-del .w-del img{
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 2px;
+}
+.ddfs .list-files .td-del{
+    width: 1px;
+    text-align: center;
+}
+.ddfs .list-files .td-del span{
+    color: red;
+    opacity: .4;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all .3s;
+}
+.ddfs .list-files .td-del span:hover{
+    opacity: 1;
+}
+.ddfs button:focus{ background-color: white; }
+.ddfs button:active{ outline: none; }
+.ddfs .wrap-progress{
+    width: 200px;
+    height: 21px;
+    margin-top: 10px;
+}
+.ddfs .input-file{ float: left; }
+.ddfs .input-file .over-view{
+    display: none;
+    position: absolute;
+    top: 25px;
+    width: 220px;
+    height: 30px;
+    background: rgba(255,255,255,.6);
+    z-index: 3;
+}
+.ddfs .input-file,.ddfs button{ position: relative; }
+.ddfs input[type=file]{
+    position:absolute;
+    z-index:2;
+    top:25px;
+    left:0;
+    filter: alpha(opacity=0);
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    opacity:0;
+    background-color:transparent;
+    color:transparent;
+	width: 126px;
+    height: 29px;
+}
+.ddfs .label{
+	position: absolute;
+    top: 55px;
+    left: 0;
+    font-size: 10px;
+}
+.ddfs button img{
+	display: none;
+	position: absolute;
+	right: -28px;
+	top: 2px;
+}
+/*.ddfs .progress-percent{ display: none; }*/
+.ddfs input[id=submit]{
+    position: relative;
+    z-index: 1;
+}
+
+/* ==================================================== *
+*            Страница "номенклатура товара"
+* ===================================================== */
+.ptne select,
+.ptne textarea,
+.ptne input,
+.ptne .dpu,
+.ptne .bottom-elements button{
+    margin-top: 10px;
+}
+.ptne button{ float: right; }
+.ptne .wvc{ position: relative; }
+.ptne .wvc img{
+    display: none;
+    position: absolute;
+    left: -10px;
+    top: 17px;
+}
+
+.ptne .modal-background{
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.7);
+}
+.ptne .modal-upload{
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50px;
+    width: 840px;
+    margin-left: -420px;
+}
+.ptne .modal-upload .modal-content{
+    padding: 0 15px;
+}
+.ptne .modal-upload .modal-out{
+    position: absolute;
+    top: 5px;
+    right: 3px;
+    font-size: 15px;
+    font-weight: bold;
+    color: rgba(0,0,0,.5);
+    transition: all .3s;
+    padding: 0 7px;
+    cursor: pointer;
+}
+.ptne .modal-upload .modal-out:hover{
+    color: rgba(255,0,0,1);
+}
+.ptne-is-images-red{color: rgba(238,95,0,1);}
+.ptne-is-images-green{color: rgba(0,95,0,1);}
+.ptne .is-images{
+    font-size: 14px;
+    position: relative;
+    right: -88px;
+    top: 1px;
+}
+
+/* ==================================================== *
+*                  Страница "Справочники"
+* ===================================================== */
+.rb .wrb,
+.rb .button{ position: relative; }
+.rb .wrb img,
+.rb .button img{
+    display: none;
+    position: absolute;
+    left: -10px;
+    top: 7px;
+}
+.rb .button img{
+    left: -28px;
+}
+
+/* ==================================================== *
+*             Страница "Поступление товара"
+* ===================================================== */
+.gr .info{
+    font-size: 14px;
+}
+.gr .table > tbody > tr > td:first-child{
+    font-size: 11px;
+    padding: 11px 0px 0;
+}
+.gr .brands,
+.gr .vendor-code{
+    width: 138px;
+}
+.gr .td3,
+.gr .td4{
+    font-size: 12px;
+    line-height: 14px;
+}
+.gr .td5{ width: 110px; }
+.gr .td6{ width: 82px; }
+.gr .td7{ width: 90px; }
+.gr .td10{ width: 65px; }
+.gr .td9{ width: 106px; }
+.gr .td11{ width: 83px; }
+.gr .td8{
+    font-size: 12px;
+    line-height: 23px;
+}
+.gr .td9 input,
+.gr .td10 input,
+.gr .td11 input{
+    font-size: 1rem;
+    padding-top: 4px;
+}
+.gr .btn.add,
+.gr .btn.send{ position: relative; }
+.gr .btn.add img{
+    display: none;
+    position: absolute;
+    left: -26px;
+}
+.gr .btn.send img{
+    display: none;
+    position: absolute;
+    right: -26px;
+}
+.gr .td8 img{ display: none; }
+
+/* ==================================================== *
+*                  Страница "Работники"
+* ===================================================== */
+.workers input,
+.workers select{
+    margin-top: 10px;
+}
+.workers .w-list{
+    position: relative;
+}
+.workers .w-list img{
+    display: none;
+    position: absolute;
+    left: -25px;
+    top: 7px;
+}
+.workers .go-change button{position: relative;}
+.workers .go-change img{
+    display: none;
+    position: absolute;
+    left: -28px;
+    top: 7px;
+}
+
+/* ==================================================== *
+*               Страница "Оприходование товара"
+* ===================================================== */
+.cngs button,
+.cngs .w-barcode{position: relative;}
+.cngs button img{
+    display: none;
+    position: absolute;
+    left: -28px;
+    top: 7px;
+}
+.cngs .w-barcode img{
+    display: none;
+    position: absolute;
+    left: -12px;
+    top: 3px;
+}
+.cngs .table1 td{
+    font-size: 14px;
+    border-top: none;
+}
+.cngs .table2 tr td{
+    font-size: 14px;
+    line-height: 12px;
+}
+.cngs .table2 td.content{
+    min-width: 670px;
+}
+
+/* ==================================================== *
+*             Страница "Оприходование товара"
+* ===================================================== */
+.cnce button,
+.cnce .w-barcode{position: relative;}
+.cnce button img{
+    display: none;
+    position: absolute;
+    right: -28px;
+    top: 0px;
+}
+.cnce .w-barcode img{
+    display: none;
+    position: absolute;
+    left: -12px;
+    top: 3px;
+}
+.cnce .table1 td{
+    font-size: 14px;
+    border-top: none;
+}
+.cnce .table2 td.barcode .w-barcode{ position: relative; }
+.cnce .table2 td.barcode .w-barcode button{
+    border: none;
+    position: absolute;
+    left: -30px;
+    padding: 0;
+    height: 0;
+}
+.cnce .table2 td.barcode .w-barcode button span.label{
+    font-size: 5px;
+    font-weight: normal;
+    top: -8px;
+}
+.cnce .table2 td.nom{
+    text-align: right;
+}
+.cnce .table2 tr td{
+    font-size: 14px;
+    line-height: 12px;
+}
+.cnce .table2 td.content{
+    min-width: 670px;
+}
+
+/* ==================================================== *
+*               Страница "Выгрузка этикеток"
+* ===================================================== */
+.ugls hr{ margin: 0 0 0px; }
+.ugls button,
+.ugls .w-barcode{position: relative;}
+.ugls .w-barcode input{
+    float: left;
+    width: 200px;
+    margin-right: 10px;
+}
+.ugls button img{
+    display: none;
+    position: absolute;
+    right: -28px;
+    top: 0px;
+}
+.ugls .w-barcode img{
+    display: none;
+    position: absolute;
+    left: -12px;
+    top: 3px;
+}
+.ugls button.add img{
+    display: none;
+    position: absolute;
+    top: 1px;
+    left: 76px;
+}
+.ugls button.strings-list-barcodes img{
+    right: -101px;
+}
+.ugls .table1 td{
+    font-size: 14px;
+    border-top: none;
+}
+.ugls .table2 td.barcode .w-barcode{ position: relative; }
+.ugls .table2 td.barcode .w-barcode button{
+    border: none;
+    position: absolute;
+    left: -30px;
+    padding: 0;
+    height: 0;
+}
+.ugls .table2 td.barcode .w-barcode button span.label{
+    font-size: 5px;
+    font-weight: normal;
+    top: -8px;
+}
+.ugls .table2 td.nom{
+    text-align: right;
+}
+.ugls .table2 tr td{
+    font-size: 14px;
+    line-height: 12px;
+}
+.ugls .table2 td.content{
+    min-width: 400px;
+}
+.ugls .table2 td.inscription-label{
+    min-width: 200px;
+}
+
+/* ==================================================== *
+*                  Страница "Поиск чека"
+* ===================================================== */
+.cksh button,
+.cksh .w-barcode{position: relative;}
+.cksh button img{
+    display: none;
+    position: absolute;
+    left: -28px;
+    top: 2px;
+}
+.cksh .w-barcode img{
+    display: none;
+    position: absolute;
+    left: -12px;
+    top: 3px;
+}
+.cksh .table1 td{
+    font-size: 14px;
+    border-top: none;
+}
+.cksh .table2 tr td{
+    font-size: 14px;
+    line-height: 12px;
+}
+.cksh .table2 td.content{
+    min-width: 670px;
+}
+.cksh .btn-search{
+    padding: 4px 30px;
+}
+.cksh .vendor-code img{
+    display: none;
+    position: absolute;
+    left: -10px;
+    top: 2px;
+}
+
+/* ==================================================== *
+*                     Отправка Email
+* ===================================================== */
+.eml button{position: relative;}
+.eml button img{
+    display: none;
+    position: absolute;
+    top: 0px;
+    right: -30px;
+}
+
+/* ==================================================== *
+*                      Товарный учёт
+* ===================================================== */
+.row1 .form-control{
+    float: left;
+}
+.cyag div[class*='col-md-']{
+    padding: 0 3px;
+}
+.cyag .top-info{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.cyag .w-discount-card-info{
+    font-size: 14px;
+    padding-right: 55px!important;
+}
+.cyag .rd{
+    font-size: 14px;
+}
+
+.cyag .rd .sko .span2,
+.cyag .rd .sko .b2,
+.cyag [class*='empty'],
+.cyag .s1,
+.cyag .s2,.cyag .section2,
+.cyag .s3,
+.cyag .section3
+{ display: none; }
+
+.cyag .table tr .w-checkbox{
+    /*display: none;*/
+    padding: 4px 0 0;
+}
+
+.cyag .glyphicon-remove{
+    position: relative;
+    top: 6px;
+    left: 4px;
+}
+
+
+
+.cyag .save,.cyag .row1 .w-dt,.cyag .row2 .w-barcode,
+.cyag .btn{ position: relative; }
+.cyag img[width="20"]{
+    display: none;
+    position: absolute;
+}
+.cyag .row1 select{
+    float: left;
+    margin-right: 7px;
+}
+.cyag .row1 .w-dt img{
+    top: 2px;
+    left: -27px;
+}
+/* кнопка "сохранить" */
+.cyag .save img{
+    left: -27px;
+    top: 2px;
+}
+/* поле "Введите штрихкод" */
+.cyag .row2 .w-barcode img{
+    top: 2px;
+    left: -27px;
+}
+/* кнопка "Остатки ШК" */
+.cyag .btn.leftovers-shk img{
+    top: 1px;
+    left: -28px;
+}
+.cyag .row1 [name=document_type]{ width: 150px; }
+.cyag .row1 [name=months]{ width: 100px; }
+.cyag .row1 [name=years]{ width: 85px; }
+.cyag .row1 [name=document]{ width: 382px; }
+.cyag .row1 table td{
+    border-top: none;
+    border-bottom: 1px solid #ddd;
+}
+.cyag .row2 [class*='col-md']:first-child{ width: 202px; }
+.cyag .row2 select,
+.cyag .row2 textarea{ margin-top: 10px; }
+.cyag .row2 textarea{ width: 95%; }
+.cyag .row2 [name=barcode]{ margin-top: 28px; }
+.cyag .row1 .totals{ position: absolute; width: 100%; }
+.cyag .row1 .totals table th,
+.cyag .row1 .totals table td
+{ padding: 2px 8px; font-size: 95%; }
+.cyag .row1 .totals table td:not(:first-child){ text-align: center; }
+.cyag .row3{ margin-top: 20px; }
+.cyag .row4 table th{ border: none; }
+.cyag .row4 table td{ border-top: 1px solid rgba(128,128,128,.1); }
+.cyag .row4 table tr[class*='section'] td{ text-align: center; }
+.cyag .row4 table td input[type=checkbox]{
+    position: relative;
+    top: 3px;
+}
+
+/* ==================================================== *
+*                      Заказы
+* ===================================================== */
+.orrs .inputs select[name*='_orders']{
+    display: inline;
+    width: 150px;
+}
+.orrs .inputs div[class*='-orders']{
+    float: left;
+    width: 150px;
+}
+.orrs .inputs .new-orders{ margin-right: 10px; }
+.orrs .inputs .form-check label{
+    font-weight: normal;
+    font-size: 14px;
+    position: relative;
+    top: -1px;
+}
+.orrs .new-orders img{
+    top: 3px;
+    left: -12px;
+}
+.orrs button[name=save_orders]{
+    float: right;
+}
+.orrs button[name=save_orders] img{
+    left: -28px;
+    top: 4px;
+}
+.orrs table > thead > tr > th {
+    font-size: 13px;
+    line-height: 13px;
+}
+.orrs table thead > tr > th:first-child{
+    width: 500px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,571 @@
+/*--------------------------------------------------------------
+
+Template: Theme Name
+Author: 
+Version:  1
+Design and Developed by: 
+
+Note: This is the file where you can add your custom styles to change the look of the theme. But don't modify "style.css" file.
+
+---------------------------------------------------------------
+CSS INDEX
+===================
+
+1. Main Menu
+2. Main Logo
+
+*/
+
+/*----------------------------------------*/
+/*  1. Main Menu
+/*----------------------------------------*/
+.desctop nav {
+    height: 40px;
+    width: 100%;
+    /*background: #455868;*/
+    font-size: 11pt;
+    font-family: 'PT Sans', Arial, sans-serif;
+    position: relative;
+    top: 22px;
+    /*border-bottom: 2px solid #283744;*/
+}
+.desctop nav ul.s1 {
+    padding-top: 0;
+    margin-top: -22px;
+    width: auto;
+    height: 90px;
+}
+.desctop nav li {
+    display: inline;
+    float: left;
+    height: 100%;
+}
+.desctop .clearfix:before,
+.desctop .clearfix:after {
+    content: " ";
+    display: table;
+}
+.desctop .clearfix:after {
+    clear: both;
+}
+.desctop .clearfix {
+    *zoom: 1;
+}
+.desctop nav a {
+    color: #535050;
+    display: inline-block;
+    width: auto;
+    height: 100%;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: 95px;
+    padding: 0 15px;
+}
+.desctop nav li:last-child a {
+    border-right: 0;
+}
+.desctop nav a:hover, nav a:active {
+    background-color: rgba(0,0,0,.1);
+}
+.desctop nav a.active,
+.mobile nav a.active{
+    background-color: rgba(204,204,204,1);
+	color: #cc3333!important;
+} 
+.desctop nav a.active-level,
+.mobile nav a.active-level{
+	color: #cc3333!important;
+} 
+.desctop nav a#pull {
+    display: none;
+}
+.desctop nav ul.s2{
+    display: block;
+    position: absolute;
+    width: 200px;
+    margin-top: 1px;
+}
+.desctop nav ul.s2 li{
+    position: relative;
+    padding: 0;
+    margin-top: -1px;
+    height: auto;
+    width: 100%;
+    background-color: rgba(255,255,255,1);
+    line-height: 0;
+    letter-spacing: normal;
+}
+.desctop nav ul.s2 li a{
+    width: 100%;
+    padding: 5px 10px 8px;
+    margin: 0 0 -2px;
+    line-height: 20px;
+    text-transform: none;
+    text-align: left;
+}
+.desctop nav ul.s2 li a:hover{
+    background-color: white;
+    color: #cc3333;
+}
+.desctop nav ul.s3{
+    display: block;
+    position: absolute;
+    top: 1px;
+    left: 200px;
+    width: 165px;
+}
+.desctop nav ul.s2 .sm.no-link{ position: relative; }
+.desctop nav ul.s2 .sm.no-link{ transition: all .3s; }
+.desctop nav ul.s2 .sm.sm-url:hover{ text-decoration: underline; }
+nav ul.s2 .sm.no-link span{
+    position: absolute;
+    font-size: 10px;
+    right: 4px;
+    top: 10px;
+    font-weight: bold;
+}
+
+@media (max-width: 1170px){
+    .desctop nav ul.s1{
+        height: 75px;
+    }
+    .desctop nav a{
+        line-height: 78px;
+        font-size: 12px;
+        padding: 0 10px;
+    }
+    .w-logo .logo img {
+        width: 105px;
+        margin-top: 10px;
+    }
+}
+@media (max-width: 991px){
+    .login-register-area ul{
+/*        width: 190px;*/
+        width: max-content;
+    }
+    .desctop nav ul.s1{ float: right; }
+}
+@media only screen and (max-width : 767px) {
+    .desctop nav ul.s1{ display: none; }
+}
+
+
+
+/* =====================================
+                MOBILE
+======================================== */
+.mobile{ display: none; }
+.mobile nav {
+/*    display: none;*/
+    height: 40px;
+    width: 100%;
+    /*background: #455868;*/
+    font-size: 11pt;
+    font-family: 'PT Sans', Arial, sans-serif;
+    position: relative;
+/*    top: 22px;*/
+    /*border-bottom: 2px solid #283744;*/
+}
+.mobile nav ul.s1 {
+    display: none;
+    padding-top: 0;
+    margin-top: -22px;
+    width: auto;
+/*    height: 90px;*/
+}
+
+.mobile nav li {
+    display: inline;
+    float: left;
+    height: 100%;
+}
+
+.mobile .clearfix:before,
+.mobile .clearfix:after {
+    content: " ";
+    display: table;
+}
+.mobile .clearfix:after {
+    clear: both;
+}
+.mobile .clearfix {
+    *zoom: 1;
+}
+
+.mobile nav a {
+    color: #535050;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: 35px;
+}
+.mobile nav li:last-child a {
+    border-right: 0;
+}
+.mobile nav a:hover, nav a:active {
+    background-color: rgba(0,0,0,.1);
+}
+
+.mobile nav a#pull {
+    display: none;
+}
+.mobile nav ul.s2{
+    display: none;
+    width: 100%;
+    margin-top: 1px;
+}
+.mobile nav ul.s2 li{
+    position: relative;
+    padding: 0;
+    margin-top: -1px;
+    height: auto;
+    width: 100%;
+    background-color: rgba(255,255,255,1);
+    line-height: 0;
+    letter-spacing: normal;
+}
+.mobile nav ul.s2 li a{
+    width: 100%;
+    padding: 5px 10px 8px;
+    margin: 0 0 -2px;
+    line-height: 20px;
+    text-align: left;
+    font-size: 12px;
+}
+.mobile nav ul.s2 li a.sm{
+    font-weight: bold;
+}
+.mobile nav ul.s3{
+    display: none;
+    top: 1px;
+    left: 200px;
+    width: 100%;
+}
+.mobile nav ul.s3 li a{
+    font-size: 14px;
+    text-transform: none;
+}
+.mobile nav ul.s3 li a{ padding-left: 20px; color: rgba(0,0,0,.6); }
+@media only screen and (max-width : 767px) {
+    nav ul.s2 .sm.no-link span{
+        -webkit-transform: rotate(91deg);
+        -ms-transform: rotate(91deg);
+        transform: rotate(91deg);
+    }
+    .full-width-mega-dropdown{ height: 58px; }
+    .mobile{ display: block; }
+    .w-logo{ display: none; }
+/*    .mobile nav{ display: block; }*/
+    .mobile nav ul.s1{
+        float: right;
+        position: relative;
+        width: 100%;
+    }
+    
+    .mobile nav {
+        border-bottom: 0;
+    }
+    .mobile nav ul {
+/*        display: none;*/
+        height: auto;
+    }
+    .mobile nav ul li{
+        width: 100%;
+        text-align: center;
+    }
+    .mobile nav a#pull {
+        display: block;
+        background-color: rgba(0,0,0,.1);
+        width: 100%;
+        position: relative;
+        top: -22px;
+        line-height: 44px;
+    }
+    .mobile nav a#pull:after {
+        content:"";
+        /*background: url('nav-icon.png') no-repeat;*/
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        position: absolute;
+        right: 15px;
+        top: 10px;
+        
+    }
+}
+
+/*----------------------------------------*/
+/*  2. Main Logo
+/*----------------------------------------*/
+.w-logo .logo img{
+    width: 125px;
+    margin-top: 12px;
+    margin-bottom: 7px;
+}
+@media (max-width: 1170px){
+    .w-logo .logo img {
+        width: 105px;
+        margin-top: 9px;
+    }
+}
+@media (max-width: 991px){
+    .w-logo .logo img {
+        margin-bottom: 6px;
+    }
+}
+
+/*----------------------------------------*/
+/*  3. single product
+/*----------------------------------------*/
+.single-protfolio-area .prodcut-price .new-price img{
+    width: 12px;
+    position: absolute;
+    top: -1px;
+    height: 17px;
+}
+
+.fancybox-overlay-fixed{ z-index: 99999999!important; }
+
+/*----------------------------------------*/
+/*  4. content
+/*----------------------------------------*/
+.main-text{
+    padding-left: 38px;
+}
+.main-text li{
+    list-style: disc;
+    display: list-item;
+}
+
+/*----------------------------------------*/
+/*  5. urpe - user_profile
+/*----------------------------------------*/
+.urpe .delete-user{
+    color: #DF002477;
+}
+.urpe .delete-user:hover{
+    color: #DF0024;
+}
+.urpe .w-del-user{
+    margin-bottom: 20px;
+}
+.urpe .w-input-phone{ position: relative; }
+.urpe .data-not-confirm{
+    color:rgba(255,0,0,.7)
+}
+.urpe .data-not-confirm span{
+    color: #44444466;
+    position: relative;
+    top: -3px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.urpe .w-input-phone .phone-confirm{
+    float: right;
+    position: absolute;
+    right: 10px;
+    top: 43px;
+    font-size: 22px;
+    color: rgba(33,219,9,1);
+    cursor: pointer;
+}
+.urpe .w-input-phone .phone-confirm img{
+    right: -35px;
+    top: 1px;
+    width: 18px;
+}
+.urpe .save-user-data{ position: relative; }
+.urpe .save-user-data img{
+    top: 7px;
+    left: -30px;
+}
+
+/* modals */
+
+/* confirm delete modal */
+.urpe #confirm-delete .modal-header { padding: 15px; }
+.urpe #confirm-delete .btn-secondary { color: #444; }
+.urpe #confirm-delete .btn-delete-profile { position: relative; }
+.urpe #confirm-delete .btn-delete-profile img{
+    top: 4px;
+    left: -120px;
+}
+
+/* --- @media --- */
+@media (max-width: 767px){
+    .urpe .save-user-data{ width: 100%;text-align: center;}
+    .urpe .w-del-user{
+/*        text-align: center;*/
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+    .urpe .data-not-confirm{ font-size: 12px; }
+}
+@media (max-width: 479px){
+    .urpe .w-input-phone .data-not-confirm{ font-size: 11px; }
+}
+
+
+/*----------------------------------------*/
+/*  6. Сегодня акция
+/*----------------------------------------*/
+.stocks-wrap img{
+    display: block;
+    width: 600px;
+    margin: auto;
+}
+/* --- @media --- */
+@media (max-width: 767px){
+/*    .stocks-wrap{ text-align: center; }*/
+    .stocks-wrap img{ width: 90%; }
+}
+
+/*----------------------------------------*/
+/*  7. Моя скидка
+/*----------------------------------------*/
+.discounts-wrap img.img-discount-card{
+    display: block;
+    width: 500px;
+    margin: auto;
+}
+.discounts-wrap img.best-price{
+    display: block;
+    width: 300px;
+    margin: auto;
+}
+/* --- @media --- */
+@media (max-width: 767px){
+/*    .discounts-wrap{ text-align: center; }*/
+    .discounts-wrap img.img-discount-card{ width: 80%; }
+    .discounts-wrap img.best-price{ width: 60%; }
+}
+
+/*----------------------------------------*/
+/*  8. О нас
+/*----------------------------------------*/
+/* --- @media --- */
+@media (max-width: 767px){
+/*    .about-us-wrap{ text-align: center; }*/
+    .about-us-wrap .about-img{ margin-bottom: 25px; }
+}
+
+/*----------------------------------------*/
+/*  9. Контакты
+/*----------------------------------------*/
+.contacts-wrap .img-enter{
+    width: 100%;
+    display: block;
+    padding: 4px;
+    margin-bottom: 20px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: border .2s ease-in-out;
+    -o-transition: border .2s ease-in-out;
+    transition: border .2s ease-in-out;
+}
+/* --- @media --- */
+@media (max-width: 991px){
+    .contacts-wrap{ text-align: center; }
+    .contacts-wrap .img-enter{
+        width: 50%;
+        margin: 0 auto 40px;
+    }
+}
+@media (max-width: 767px){
+    .contacts-wrap .img-enter{
+        width: 80%;
+        margin: -10px auto 20px;
+    }
+    .contacts-wrap [class*="h3"]{
+        font-size: 20px;
+    }
+}
+
+/*----------------------------------------*/
+/*  10. Модальное окно авторизации
+/*----------------------------------------*/
+#modal-auth .modal-alerts{
+    margin-top: 90px;
+    margin-bottom: -25px;
+}
+
+/*----------------------------------------*/
+/*  11. Модальное окно регистрации
+/*----------------------------------------*/
+#modal-register .modal-alerts{ margin-bottom: -25px; }
+
+/*----------------------------------------*/
+/*  12. Главный слайдер и элементы
+/*----------------------------------------*/
+.main-bt .add-order img{
+    position: absolute;
+    left: -25px;
+    top: 14px;
+}
+
+
+/*----------------------------------------*/
+/*  12. Главный слайдер и элементы
+/*----------------------------------------*/
+/*
+@media(max-width: 767px){
+    .slider-area .single-slider [class*="btn-"]{
+        padding: 0 12px;
+        font-size: 10px;
+        line-height: 29px;
+        margin: 0;
+        height: 30px;
+    }
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

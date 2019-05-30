@@ -1,0 +1,25 @@
+Dropzone
+
+https://github.com/perminder-klair/yii2-dropzone
+
+php composer.phar require --prefer-dist perminder-klair/yii2-dropzone "dev-master"
+
+or add
+
+"perminder-klair/yii2-dropzone": "dev-master"
+
+
+Использовал эту запись:
+composer require perminder-klair/yii2-dropzone
+
+echo \kato\DropZone::widget([
+       'options' => [
+	       // ajax/upload-files - путь к нужному экшену
+		   'url' => Yii::$app->urlManager->createUrl('ajax/upload-files'),
+           'maxFilesize' => '2',
+       ],
+       'clientEvents' => [
+           'complete' => "function(file){console.log(file)}",
+           'removedfile' => "function(file){alert(file.name + ' is removed')}"
+       ],
+   ]);
