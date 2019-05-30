@@ -1,6 +1,7 @@
 <?php
 /**
  * Контроллер для работы с Ajax зпросами
+ * Отсюда запускаются методы из модели Ajax.php
 */
 namespace frontend\controllers;
 

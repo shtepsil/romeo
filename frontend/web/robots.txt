@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /user
+Disallow: /site/cart
+Host: romeo-man.ru
+Sitemap: https://romeo-man.ru/sitemap.xml
